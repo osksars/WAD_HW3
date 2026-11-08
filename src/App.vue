@@ -1,9 +1,12 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <header>
+    <nav>
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">Sign up</router-link>
+    </nav>
+  </header>
   <router-view />
+  <footer></footer>
 </template>
 
 <style>
