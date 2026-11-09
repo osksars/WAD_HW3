@@ -1,9 +1,10 @@
 <template>
   
+  <!-- header -->
   <header>
     <nav>
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">Sign up</router-link>
+      <router-link to="/signup">Sign up</router-link>
     </nav>
   </header>
   <router-view />
@@ -15,6 +16,8 @@
 
 </template>
 
+
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -22,6 +25,12 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  border: solid;
 }
 
 nav {
@@ -35,5 +44,11 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+
+footer {
+  border: solid;
+
+  bottom: 0;
 }
 </style>

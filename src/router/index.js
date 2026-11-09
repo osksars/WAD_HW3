@@ -8,17 +8,17 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/about",
-    name: "about",
+    path: "/signup",
+    name: "signup",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(
-        /* webpackChunkName: "about" */ "WAD_HW3/src/views/SingupView.vue/index.js"
-      ),
-  },
-];
+        /* webpackChunkName: "about" */ "../views/SingupView.vue"
+      )
+  }
+]
 
 const router = createRouter({
   history: createWebHashHistory(),

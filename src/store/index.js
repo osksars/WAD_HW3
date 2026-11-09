@@ -4,112 +4,112 @@ export default createStore({
   state: {
     posts:[
   {
-    "postId": 1,
-    "userName": "Ana",
-    "creationTime": "2026-10-21",
-    "userPicture": "images/daweid-icon-7797704_1920.png",
-    "postText": "Beautiful day in Tartu! #Tartu #Estonia",
-    "postPhoto": "images/tartu.webp",
-    "likes": 12
+    postId: 1,
+    userName: "Ana",
+  creationTime: "2026-10-21",
+    userPicture: "images/daweid-icon-7797704_1920.png",
+    postText: "Beautiful day in Tartu! #Tartu #Estonia",
+    postPhoto: "images/tartu.webp",
+    likes: 12
   },
   {
-    "postId": 2,
-    "userName": "Mark",
-    "creationTime": "2026-10-22",
-    "userPicture": "images/daweid-icon-7797704_1920.png",
-    "postText": "Does anyone know which room the lab is in today?",
-    "postPhoto": null,
-    "likes": 34
+    postId: 2,
+    userName: "Mark",
+    creationTime: "2026-10-22",
+    userPicture: "images/daweid-icon-7797704_1920.png",
+    postText: "Does anyone know which room the lab is in today?",
+    postPhoto: null,
+    likes: 34
   },
   {
-    "postId": 3,
-    "userName": "Emma",
-    "creationTime": "2026-10-23",
-    "userPicture": "images/daweid-icon-7797704_1920.png",
-    "postText": "Finally found a quiet corner in the library for doing assignments.",
-    "postPhoto": "images/library.webp",
-    "likes": 5
+    postId: 3,
+    userName: "Emma",
+    creationTime: "2026-10-23",
+    userPicture: "images/daweid-icon-7797704_1920.png",
+    postText: "Finally found a quiet corner in the library for doing assignments.",
+    postPhoto: "images/library.webp",
+    likes: 5
   },
   {
-    "postId": 4,
-    "userName": "John",
-    "creationTime": "2026-10-24",
-    "userPicture": "images/daweid-icon-7797704_1920.png",
-    "postText": "Coffee break between lectures, campus is looking great this week!",
-    "postPhoto": "images/coffee.jpg",
-    "likes": 24
+    postId: 4,
+    userName: "John",
+    creationTime: "2026-10-24",
+    userPicture: "images/daweid-icon-7797704_1920.png",
+    postText: "Coffee break between lectures, campus is looking great this week!",
+    postPhoto: "images/coffee.jpg",
+    likes: 24
   },
   {
-    "postId": 5,
-    "userName": "Lisa",
-    "creationTime": "2026-10-25",
-    "userPicture": "images/daweid-icon-7797704_1920.png",
-    "postText": "Does anyone want to form a study group for the upcoming exam?",
-    "postPhoto": null,
-    "likes": 67
+    postId: 5,
+    userName: "Lisa",
+    creationTime: "2026-10-25",
+    userPicture: "images/daweid-icon-7797704_1920.png",
+    postText: "Does anyone want to form a study group for the upcoming exam?",
+    postPhoto: null,
+    likes: 67
   },
   {
-    "postId": 6,
-    "userName": "Peter",
-    "creationTime": "2026-10-26",
-    "userPicture": "images/daweid-icon-7797704_1920.png",
-    "postText": "What a wonderful end of the day!",
-    "postPhoto": "images/Magnificent_sunset.jpg",
-    "likes": 33
+    postId: 6,
+    userName: "Peter",
+    creationTime: "2026-10-26",
+    userPicture: "images/daweid-icon-7797704_1920.png",
+    postText: "What a wonderful end of the day!",
+    postPhoto: "images/Magnificent_sunset.jpg",
+    likes: 33
   },
   {
-    "postId": 7,
-    "userName": "Katty",
-    "creationTime": "2026-10-27",
-    "userPicture": "images/daweid-icon-7797704_1920.png",
-    "postText": "Does anyone know where I can use a printer?",
-    "postPhoto": null,
-    "likes": 9
+    postId: 7,
+    userName: "Katty",
+    creationTime: "2026-10-27",
+    userPicture: "images/daweid-icon-7797704_1920.png",
+    postText: "Does anyone know where I can use a printer?",
+    postPhoto: null,
+    likes: 9
   },
   {
-    "postId": 8,
-    "userName": "Max",
-    "creationTime": "2026-10-28",
-    "userPicture": "images/daweid-icon-7797704_1920.png",
-    "postText": "There is a quiz night today! It's gonna be so good!",
-    "postPhoto": "images/Moku_Tartu.jpg",
-    "likes": 11
+    postId: 8,
+    userName: "Max",
+    creationTime: "2026-10-28",
+    userPicture: "images/daweid-icon-7797704_1920.png",
+    postText: "There is a quiz night today! It's gonna be so good!",
+    postPhoto: "images/Moku_Tartu.jpg",
+    likes: 11
   },
   {
-    "postId": 9,
-    "userName": "Polly",
-    "creationTime": "2026-10-29",
-    "userPicture": "images/daweid-icon-7797704_1920.png",
-    "postText": "So much studying to do before exams!",
-    "postPhoto": "images/fall_studying.jpg",
-    "likes": 32
+    postId: 9,
+    userName: "Polly",
+    creationTime: "2026-10-29",
+    userPicture: "images/daweid-icon-7797704_1920.png",
+    postText: "So much studying to do before exams!",
+    postPhoto: "images/fall_studying.jpg",
+    likes: 32
   },
   {
-    "postId": 10,
-    "userName": "Alex",
-    "creationTime": "2026-10-30",
-    "userPicture": "images/daweid-icon-7797704_1920.png",
-    "postText": "Guys, you absolutely need to go there!",
-    "postPhoto": "images/Tartu_Estonia.jpg",
-    "likes": 23
+    postId: 10,
+    userName: "Alex",
+    creationTime: "2026-10-30",
+    userPicture: "images/daweid-icon-7797704_1920.png",
+    postText: "Guys, you absolutely need to go there!",
+    postPhoto: "images/Tartu_Estonia.jpg",
+    likes: 23
   },
   {
-    "postId": 11,
-    "userName": "Mia",
-    "creationTime": "2026-10-31",
-    "userPicture": "images/daweid-icon-7797704_1920.png",
-    "postText": "Does anyone want to join my project group?",
-    "postPhoto": null,
-    "likes": 1
+    postId: 11,
+    userName: "Mia",
+    creationTime: "2026-10-31",
+    userPicture: "images/daweid-icon-7797704_1920.png",
+    postText: "Does anyone want to join my project group?",
+    postPhoto: null,
+    likes: 1
   },
   {
-    "postId": 12,
-    "userName": "Teo",
-    "creationTime": "2026-11-01",
-    "userPicture": "images/daweid-icon-7797704_1920.png",
-    "postText": "Early mornings are hard, but this view...",
-    "postPhoto": "images/Mornings_in_Tartu.jpg",
-    "likes": 56
+      postId: 12,
+      userName: "Teo",
+      creationTime: "2026-11-01",
+      userPicture: "images/daweid-icon-7797704_1920.png",
+      postText: "Early mornings are hard, but this view...",
+      postPhoto: "images/Mornings_in_Tartu.jpg",
+      likes: 56
   }
   ],
   },

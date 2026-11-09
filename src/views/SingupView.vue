@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="singup">
     <form action="App.vue" class="form">
       <text>Email</text>
       <input type="email" placeholder="Email" required class="email"/> <br />
