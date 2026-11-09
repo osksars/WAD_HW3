@@ -1,4 +1,5 @@
 <template>
+  
   <header>
     <nav>
       <router-link to="/">Home</router-link> |
@@ -6,7 +7,12 @@
     </nav>
   </header>
   <router-view />
-  <footer></footer>
+
+  <!-- footer -->
+  <footer class="footer">
+    <p>&copy; 2026 PostIt - WAD homework</p>
+  </footer>
+
 </template>
 
 <style>

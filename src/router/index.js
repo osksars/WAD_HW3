@@ -15,7 +15,7 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(
-        /* webpackChunkName: "about" */ "../views/SingupView.vue/index.js"
+        /* webpackChunkName: "about" */ "WAD_HW3/src/views/SingupView.vue/index.js"
       ),
   },
 ];
