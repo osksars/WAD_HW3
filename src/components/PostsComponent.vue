@@ -1,19 +1,19 @@
 <template>
 <body id= "posts">
 <ul class="feed">
-<li class="post" v-for = "post in posts" :key="post.id">
+<li class="post" v-for = "post in posts" :key=post.PostId>
     <div post-header>
         <span class="userName"> {{post.userName}} </span> <br>
         <span class="time"> {{formatDate(post.creationTime)}} </span> <br>
-        <!-- <img class="userPicture" src="../assets/daweid-icon-7797704_1920.png"> -->
+        <img class="userPicture" src="images/daweid-icon-7797704_1920.png">
     </div>
     <div class="post-body">
         <span class="postText"> {{post.postText}} </span>
-        <img :alt="'Photo from' + post.userName" :src="post.postPhoto" class="postPhoto" >
+        <img :alt="'Photo from ' + post.userName" :src="post.postPhoto" class="postPhoto" >
     </div>
     <div class="post-footer">
         <span class="likes"> {{post.likes}} </span>
-        <button class="likeBtn"></button>
+        <button class="likeBtn" @click="like(post.likes, post, button)"></button>
     </div> 
 </li>
 </ul>
@@ -40,18 +40,9 @@ methods: {
             year: "numeric",
         });
     }
-//     likes(likes, post, likeBtn) {
-//         let liked = false;
-//         let count = post.likes || 0;
-//         likeBtn.textContent = `👍 ${count}`;
-
-//     likeBtn.addEventListener("click", () => {
-//         liked = !liked;
-//         count += liked ? 1 : -1;
-//         likeBtn.classList.toggle("liked", liked);
-//         likeBtn.textContent = `👍 ${count}`;
-//     });
-//     }
+    // like(post.likes, post, button) {
+    //     this.$store.commit("like", post.likes, post, button)
+    // }
 }}
 </script>
 
@@ -175,7 +166,6 @@ body {
     display: block;
     /* removes the small gap under inline images */
     width: 100%;
-    aspect-ratio: 1/1;
     object-fit: cover;
 }
 
@@ -234,6 +224,10 @@ body {
     .feed {
         gap: 0.75rem;
     }
+}
+
+.userPicture {
+    width: 60px;
 }
 
 </style>
