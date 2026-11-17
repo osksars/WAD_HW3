@@ -44,6 +44,7 @@ methods: {
     //     this.$store.commit("like", post.likes, post, button)
     // }
 }}
+
 </script>
 
 <style>

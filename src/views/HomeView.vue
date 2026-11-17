@@ -1,4 +1,11 @@
 <template>
+
+  <div>
+    <body>
+        <header-component></header-component>
+    </body>
+  </div>
+
   <div class="home">
     <body>
   <!-- header: navigation links + account avatar -->
@@ -13,19 +20,28 @@
     </section>
   </main>
 
-</body>
+    </body>
   </div>
 
+  <div>
+    <body>
+        <footer-component></footer-component>
+    </body>
+  </div>
 
 </template>
 
 <script>
+import FooterComponent from '@/components/FooterComponent.vue';
+import HeaderComponent from '@/components/HeaderComponent.vue';
 import PostsComponent from '@/components/PostsComponent.vue';
 
 export default {
   name: "HomeView",
   components: {
-    PostsComponent
+    PostsComponent,
+    HeaderComponent,
+    FooterComponent
   },
   data: function() {
     return {}
