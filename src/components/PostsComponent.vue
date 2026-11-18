@@ -1,7 +1,7 @@
 <template>
 <body id= "posts">
 <ul class="feed">
-<li class="post" v-for = "post in posts" :key=post.PostId>
+<li class="post" v-for = "post in posts" :key=post.postId>
     <div post-header>
         <span class="userName"> {{post.userName}} </span> <br>
         <span class="time"> {{formatDate(post.creationTime)}} </span> <br>
@@ -13,7 +13,7 @@
     </div>
     <div class="post-footer">
         <span class="likes">  </span>
-        <button class="like-btn" @click="toggleLike(state, post.postId)" > {{post.likes}} 👍 </button>
+        <button class="like-btn" :class="{ liked : post.liked}" @click="toggleLike(post.postId)" > {{post.likes}} 👍 </button>
     </div> 
 </li>
 </ul>
@@ -40,7 +40,7 @@ methods: {
             year: "numeric",
         });
     },
-    toggleLike(state, postId) {
+    toggleLike(postId) {
         this.$store.commit("toggleLike", postId)
     }
 }}
@@ -197,8 +197,6 @@ body {
 .like-btn:hover {
     background: var(--paper); /* light highlight on hover */
 }
-
-*/
 
 /* the "liked" class is added/removed by the javascript in index.html */
 .like-btn.liked {

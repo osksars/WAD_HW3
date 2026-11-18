@@ -128,7 +128,8 @@ export default createStore({
   getters: {},
   mutations: {
     toggleLike(state, postId) {
-      const post = state.posts.find(p => p.id === postId);
+      const post = state.posts.find(p => p.postId === postId);
+      if (!post) return;
       post.liked = !post.liked;
       post.likes += post.liked ? 1 : -1;
     }
