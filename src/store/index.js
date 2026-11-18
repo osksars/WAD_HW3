@@ -6,11 +6,12 @@ export default createStore({
   {
     postId: 1,
     userName: "Ana",
-  creationTime: "2026-10-21",
+    creationTime: "2026-10-21",
     userPicture: "images/daweid-icon-7797704_1920.png",
     postText: "Beautiful day in Tartu! #Tartu #Estonia",
     postPhoto: "images/tartu.webp",
-    likes: 12
+    likes: 12,
+    liked: false
   },
   {
     postId: 2,
@@ -19,7 +20,8 @@ export default createStore({
     userPicture: "images/daweid-icon-7797704_1920.png",
     postText: "Does anyone know which room the lab is in today?",
     postPhoto: null,
-    likes: 34
+    likes: 34,
+    liked: false
   },
   {
     postId: 3,
@@ -28,7 +30,8 @@ export default createStore({
     userPicture: "images/daweid-icon-7797704_1920.png",
     postText: "Finally found a quiet corner in the library for doing assignments.",
     postPhoto: "images/library.webp",
-    likes: 5
+    likes: 5,
+    liked: false
   },
   {
     postId: 4,
@@ -37,7 +40,8 @@ export default createStore({
     userPicture: "images/daweid-icon-7797704_1920.png",
     postText: "Coffee break between lectures, campus is looking great this week!",
     postPhoto: "images/coffee.jpg",
-    likes: 24
+    likes: 24,
+    liked: false
   },
   {
     postId: 5,
@@ -46,7 +50,8 @@ export default createStore({
     userPicture: "images/daweid-icon-7797704_1920.png",
     postText: "Does anyone want to form a study group for the upcoming exam?",
     postPhoto: null,
-    likes: 67
+    likes: 67,
+    liked: false
   },
   {
     postId: 6,
@@ -55,7 +60,8 @@ export default createStore({
     userPicture: "images/daweid-icon-7797704_1920.png",
     postText: "What a wonderful end of the day!",
     postPhoto: "images/Magnificent_sunset.jpg",
-    likes: 33
+    likes: 33,
+    liked: false
   },
   {
     postId: 7,
@@ -64,7 +70,8 @@ export default createStore({
     userPicture: "images/daweid-icon-7797704_1920.png",
     postText: "Does anyone know where I can use a printer?",
     postPhoto: null,
-    likes: 9
+    likes: 9,
+    liked: false
   },
   {
     postId: 8,
@@ -73,7 +80,8 @@ export default createStore({
     userPicture: "images/daweid-icon-7797704_1920.png",
     postText: "There is a quiz night today! It's gonna be so good!",
     postPhoto: "images/Moku_Tartu.jpg",
-    likes: 11
+    likes: 11,
+    liked: false
   },
   {
     postId: 9,
@@ -82,7 +90,8 @@ export default createStore({
     userPicture: "images/daweid-icon-7797704_1920.png",
     postText: "So much studying to do before exams!",
     postPhoto: "images/fall_studying.jpg",
-    likes: 32
+    likes: 32,
+    liked: false
   },
   {
     postId: 10,
@@ -91,7 +100,8 @@ export default createStore({
     userPicture: "images/daweid-icon-7797704_1920.png",
     postText: "Guys, you absolutely need to go there!",
     postPhoto: "images/Tartu_Estonia.jpg",
-    likes: 23
+    likes: 23,
+    liked: false
   },
   {
     postId: 11,
@@ -100,7 +110,8 @@ export default createStore({
     userPicture: "images/daweid-icon-7797704_1920.png",
     postText: "Does anyone want to join my project group?",
     postPhoto: null,
-    likes: 1
+    likes: 1,
+    liked: false
   },
   {
       postId: 12,
@@ -109,25 +120,19 @@ export default createStore({
       userPicture: "images/daweid-icon-7797704_1920.png",
       postText: "Early mornings are hard, but this view...",
       postPhoto: "images/Mornings_in_Tartu.jpg",
-      likes: 56
+      likes: 56,
+      liked: false
   }
   ],
   },
   getters: {},
   mutations: {
-    like(likes, post, likeBtn) {
-        let liked = false;
-        let count = post.likes || 0;
-        likeBtn.textContent = `👍 ${count}`;
-
-    likeBtn.addEventListener("click", () => {
-        liked = !liked;
-        count += liked ? 1 : -1;
-        likeBtn.classList.toggle("liked", liked);
-        likeBtn.textContent = `👍 ${count}`;
-    });
+    toggleLike(state, postId) {
+      const post = state.posts.find(p => p.id === postId);
+      post.liked = !post.liked;
+      post.likes += post.liked ? 1 : -1;
     }
-  },
+    },
   actions: {},
   modules: {},
 });

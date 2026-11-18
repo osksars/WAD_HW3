@@ -9,11 +9,11 @@
     </div>
     <div class="post-body">
         <span class="postText"> {{post.postText}} </span>
-        <img :alt="'Photo from ' + post.userName" :src="post.postPhoto" class="postPhoto" >
+        <img v-if="post.postPhoto != null" :alt="'Photo from ' + post.userName" :src="post.postPhoto" class="postPhoto" >
     </div>
     <div class="post-footer">
-        <span class="likes"> {{post.likes}} </span>
-        <button class="likeBtn" @click="like(post.likes, post, button)"></button>
+        <span class="likes">  </span>
+        <button class="like-btn" @click="toggleLike(state, post.postId)" > {{post.likes}} 👍 </button>
     </div> 
 </li>
 </ul>
@@ -39,10 +39,10 @@ methods: {
             day: "numeric",
             year: "numeric",
         });
+    },
+    toggleLike(state, postId) {
+        this.$store.commit("toggleLike", postId)
     }
-    // like(post.likes, post, button) {
-    //     this.$store.commit("like", post.likes, post, button)
-    // }
 }}
 
 </script>
