@@ -1,6 +1,5 @@
 <template>
 
-    <!-- footer -->
   <footer class="footer">
     <p>&copy; 2026 PostIt - WAD homework</p>
   </footer>

@@ -1,49 +1,57 @@
 <template>
-<body id= "posts">
-<ul class="feed">
-<li class="post" v-for = "post in posts" :key=post.postId>
-    <div post-header>
-        <span class="userName"> {{post.userName}} </span> <br>
-        <span class="time"> {{formatDate(post.creationTime)}} </span> <br>
-        <img class="userPicture" src="images/daweid-icon-7797704_1920.png">
-    </div>
-    <div class="post-body">
-        <span class="postText"> {{post.postText}} </span>
-        <img v-if="post.postPhoto != null" :alt="'Photo from ' + post.userName" :src="post.postPhoto" class="postPhoto" >
-    </div>
-    <div class="post-footer">
-        <span class="likes">  </span>
-        <button class="like-btn" :class="{ liked : post.liked}" @click="toggleLike(post.postId)" > {{post.likes}} 👍 </button>
-    </div> 
-</li>
-</ul>
-</body>
+
+    <body id="posts">
+        <ul class="feed">
+            <!-- takes the posts from the list in a loop -->
+            <li class="post" v-for="post in posts" :key=post.postId>
+                <div post-header>
+                    <span class="userName"> {{ post.userName }} </span> <br>
+                    <span class="time"> {{ formatDate(post.creationTime) }} </span> <br>
+                    <img class="userPicture" src="images/daweid-icon-7797704_1920.png">
+                </div>
+                <div class="post-body">
+                    <span class="postText"> {{ post.postText }} </span>
+                    <img v-if="post.postPhoto != null" :alt="'Photo from ' + post.userName" :src="post.postPhoto"
+                        class="postPhoto">
+                </div>
+                <div class="post-footer">
+                    <span class="likes"> </span>
+                    <button class="like-btn" :class="{ liked: post.liked }" @click="toggleLike(post.postId)">
+                        {{ post.likes }} 👍 </button>
+                </div>
+            </li>
+        </ul>
+    </body>
 </template>
 
 <script>
 
 export default {
-name: "PostsComponent",
-data: function() {
-return {
-}},
-computed: {
-    posts(){
-        return [...this.$store.state.posts].sort((a, b) => b.creationTime.localeCompare(a.creationTime));},    
-},
-methods: {
-    formatDate(isoString) {
-        const date = new Date(isoString + "T00:00:00");
-        return date.toLocaleDateString("en-US", {
-            month: "short",
-            day: "numeric",
-            year: "numeric",
-        });
+    name: "PostsComponent",
+    data: function () {
+        return {
+        }
     },
-    toggleLike(postId) {
-        this.$store.commit("toggleLike", postId)
+    computed: {
+        posts() {
+            // fetching the posts from the store
+            return [...this.$store.state.posts].sort((a, b) => b.creationTime.localeCompare(a.creationTime));
+        },
+    },
+    methods: {
+        formatDate(isoString) {
+            const date = new Date(isoString + "T00:00:00");
+            return date.toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+            });
+        },
+        toggleLike(postId) {
+            this.$store.commit("toggleLike", postId)
+        }
     }
-}}
+}
 
 </script>
 
@@ -134,7 +142,7 @@ body {
 
 /* top row of a post: avatar, username, date
     ">" means only a .post-header that is a direct child of .post */
-.post > .post-header {
+.post>.post-header {
     display: flex;
     align-items: center;
     gap: 0.6rem;
@@ -195,7 +203,8 @@ body {
 }
 
 .like-btn:hover {
-    background: var(--paper); /* light highlight on hover */
+    background: var(--paper);
+    /* light highlight on hover */
 }
 
 /* the "liked" class is added/removed by the javascript in index.html */
@@ -228,5 +237,4 @@ body {
 .userPicture {
     width: 60px;
 }
-
 </style>

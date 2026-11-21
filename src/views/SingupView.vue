@@ -4,28 +4,14 @@
 
   <div class="singup">
     <form @submit.prevent="handleSignup" class="form">
-     <div class="form-group">
+      <div class="form-group">
         <label for="email">Email</label>
-        <input
-          id="email"
-          v-model="email"
-          type="email"
-          placeholder="Email"
-          required
-          class="email"
-        />
+        <input id="email" v-model="email" type="email" placeholder="Email" required class="email" />
       </div>
 
       <div class="form-group">
         <label for="password">Password</label>
-        <input
-          id="password"
-          v-model="password"
-          type="password"
-          placeholder="Password"
-          required
-          class="password"
-        />
+        <input id="password" v-model="password" type="password" placeholder="Password" required class="password" />
       </div>
 
       <div v-if="passwordErrors.length > 0" class="error-box">
@@ -42,7 +28,7 @@
   </div>
 
   <FooterComponent></FooterComponent>
-  
+
 </template>
 
 <script>
@@ -55,14 +41,14 @@ export default {
     HeaderComponent,
     FooterComponent
   },
-  data: function() {
+  data: function () {
     return {
       email: "",
       password: "",
       passwordErrors: []
     };
   },
-methods: {
+  methods: {
     validatePassword(password) {
       const errors = [];
 
@@ -106,8 +92,7 @@ methods: {
 </script>
 
 <style>
-  * {
-    border-radius: 30px;
-  }
-  
+* {
+  border-radius: 30px;
+}
 </style>
