@@ -1,10 +1,10 @@
 <template>
 
-    <body id="posts">
+    <section id="posts" class="feed-wrapper">
         <ul class="feed">
             <!-- takes the posts from the list in a loop -->
             <li class="post" v-for="post in posts" :key=post.postId>
-                <div post-header>
+                <div class="post-header">
                     <span class="userName"> {{ post.userName }} </span> <br>
                     <span class="time"> {{ formatDate(post.creationTime) }} </span> <br>
                     <img class="userPicture" src="images/daweid-icon-7797704_1920.png">
@@ -21,7 +21,7 @@
                 </div>
             </li>
         </ul>
-    </body>
+    </section>
 </template>
 
 <script>
@@ -55,186 +55,110 @@ export default {
 
 </script>
 
-<style>
-:root {
-    --ink: #1b1f27;
-    /* main text color */
-    --paper: #f6f4ef;
-    /* page background color */
-    --card: #ffffff;
-    /* background of post cards */
-    --line: #dcd8cf;
-    /* borders and header background */
-    --accent: #2c4a6e;
-    /* accent color (hover, liked state) */
-    --accent-hover: #203854;
-    /* darker accent color */
-    --muted: #7a7568;
-    /* grey text: dates, footer*/
+<style scoped>
+.feed-wrapper {
+  width: 100%;
+  max-width: 640px;
 }
 
-/*make width/height include padding and border, so sizes are more predictable */
-* {
-    box-sizing: border-box;
-    font-family: "Segoe UI", Helvetica, Arial, sans-serif;
-}
-
-/* base page styles */
-body {
-    margin: 0;
-    background-color: var(--paper);
-    color: var(--ink);
-    line-height: 1.5;
-    /* more readable spacing between lines */
-}
-
-/* avatar (round profile picture)
-   used twice: in header (post link) and in each post header */
-.avatar-btn {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    /* makes the square into a circle */
-    background: #ffffff;
-    border: 2px solid #fff;
-    overflow: hidden;
-    /* crop the image to the circle */
-    display: block;
-}
-
-/* image fills the circle without being stretched */
-.avatar-btn img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* crop instead of distorting */
-}
-
-/* main content area */
-
-/* centre the feed horizontally */
 .feed {
-    display: flex;
-    justify-content: center;
-    padding: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
-/* vertical list of posts, max 640px wide */
-.feed {
-    display: flex;
-    flex-direction: column;
-    /* stack posts top to bottom */
-    gap: 1rem;
-    /* space between posts */
-    width: 100%;
-    max-width: 640px;
-}
-
-/* individual post card */
 .post {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    overflow: hidden;
-    /* keeps the image inside the rounded corners */
-
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(27, 31, 39, 0.04);
 }
 
-/* top row of a post: avatar, username, date
-    ">" means only a .post-header that is a direct child of .post */
-.post>.post-header {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    padding: 0.75rem 1rem;
+.post-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1rem;
 }
 
-/* smaller avatar in the post header (overrides the 38px default above) */
-.post-header .avatar {
-    width: 32px;
-    height: 32px;
-    background: var(--paper);
-    font-size: 1px solid var(--line);
-}
-
-/* date: grey, small, pushed to the far right of the row
-    (margin-left: auto takes up all the free space on the left) */
-.post-header time {
-    margin-left: auto;
-    color: var(--muted);
-    font-size: 0.85rem;
-}
-
-/* "+" = the .post-body that comes directly after the .post-header */
-.post-header+.post-body {
-    padding: 0 1rem 0.75rem;
-}
-
-/* post image: full width, always square, cropped to fit */
-.post-body img {
-    display: block;
-    /* removes the small gap under inline images */
-    width: 100%;
-    object-fit: cover;
-}
-
-/* post text*/
-.post-body p {
-    margin: 0.6rem 1rem;
-}
-
-/* "~" = any .post-footer that comes after a .post-body (same parent)
-    adds a thin line above the like button */
-.post-body~.post-footer {
-    padding: 0.5rem 1rem 0.85rem;
-    border-top: 1px solid var(--line);
-}
-
-/* like button */
-
-/* reset the default button so it looks like plain text with an emoji  */
-.like-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.1rem;
-    padding: 0.2rem 0.4rem;
-    border-radius: 4px;
-}
-
-.like-btn:hover {
-    background: var(--paper);
-    /* light highlight on hover */
-}
-
-/* the "liked" class is added/removed by the javascript in index.html */
-.like-btn.liked {
-    color: var(--accent);
-}
-
-/* mobile styles
-    applied only when the screen is 480px wide or less (phones)
-    smaller paddings and fonts so everything fits */
-@media (max-width: 480px) {
-    header {
-        padding: 0.6rem 0.8rem;
-    }
-
-    nav a {
-        padding: 0.35rem 0.6rem;
-        font-size: 0.9rem;
-    }
-
-    main {
-        padding: 0.75rem;
-    }
-
-    .feed {
-        gap: 0.75rem;
-    }
+.author-info {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
 }
 
 .userPicture {
-    width: 60px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.userName {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.time {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.post-body .postPhoto {
+  display: block;
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+}
+
+.post-body .postText {
+  display: block;
+  margin: 0.85rem 1rem;
+  color: var(--ink);
+}
+
+.post-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1rem 0.8rem;
+  border-top: 1px solid var(--line);
+}
+
+.like-btn {
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 6px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.like-btn:hover {
+  background: var(--paper);
+}
+
+.like-btn.liked {
+  background: var(--paper);
+  border-color: var(--accent);
+}
+
+.likes-count {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+@media (max-width: 480px) {
+  .feed {
+    gap: 0.85rem;
+  }
 }
 </style>

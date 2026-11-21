@@ -1,42 +1,22 @@
 <template>
 
-  <footer class="footer">
+  <footer class="site-footer">
     <p>&copy; 2026 PostIt - WAD homework</p>
   </footer>
 
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+<style scoped>
+.site-footer {
+  background-color: var(--card);
+  border-top: 1px solid var(--line);
+  padding: 1rem 1.5rem;
   text-align: center;
-  color: #2c3e50;
-  display: flex;
-  flex-direction: column;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
-header {
-  border: solid;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-
-footer {
-  border: solid;
-
-  bottom: 0;
+.site-footer p {
+  margin: 0;
 }
 </style>

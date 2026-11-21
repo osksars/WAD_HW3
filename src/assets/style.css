@@ -1,0 +1,42 @@
+:root {
+  --ink: #1b1f27;
+  --paper: #f6f4ef;
+  --card: #ffffff;
+  --line: #dcd8cf;
+  --accent: #2c4a6e;
+  --accent-hover: #203854;
+  --muted: #7a7568;
+  --error-bg: #fdf2f2;
+  --error-border: #f5c2c7;
+  --error-text: #842029;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-main {
+  flex: 1;
+  width: 100%;
+  padding: 1.5rem 1rem;
+}
+
+@media (max-width: 480px) {
+  .page-main {
+    padding: 1rem 0.75rem;
+  }
+}

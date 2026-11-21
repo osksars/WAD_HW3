@@ -1,8 +1,8 @@
 <template>
   <!-- router for the 2 pages -->
   <router-view>
-    <header>
-      <nav>
+    <header class="site-header">
+      <nav class="nav">
         <router-link to="/">Home</router-link> |
         <router-link to="/signup">Sign up</router-link>
       </nav>
@@ -11,37 +11,51 @@
 
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+<style scoped>
+.site-header {
+  background-color: var(--card);
+  border-bottom: 1px solid var(--line);
+  padding: 1rem 1.5rem;
   text-align: center;
-  color: #2c3e50;
-  display: flex;
-  flex-direction: column;
 }
 
-header {
-  border: solid;
+.nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-nav {
-  padding: 30px;
+.nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--ink);
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
+  transition: background-color 0.2s, color 0.2s;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.nav a:hover {
+  background-color: var(--paper);
+  color: var(--accent);
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+.nav a.router-link-exact-active {
+  background-color: var(--accent);
+  color: #ffffff;
 }
 
-footer {
-  border: solid;
+.divider {
+  color: var(--line);
+}
 
-  bottom: 0;
+@media (max-width: 480px) {
+  .site-header {
+    padding: 0.75rem 0.8rem;
+  }
+
+  .nav a {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.9rem;
+  }
 }
 </style>
