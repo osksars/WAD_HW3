@@ -1,13 +1,11 @@
 <template>
   <!-- router for the 2 pages -->
-  <router-view>
     <header class="site-header">
       <nav class="nav">
         <router-link to="/">Home</router-link> |
         <router-link to="/signup">Sign up</router-link>
       </nav>
     </header>
-  </router-view>
 
 </template>
 

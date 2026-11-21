@@ -4,14 +4,11 @@
 
   <!-- posts section -->
   <div class="home">
-
-    <body>
       <main>
         <section class="feed" id="feed" aria-label="Posts">
           <posts-component></posts-component>
         </section>
       </main>
-    </body>
   </div>
 
   <footer-component></footer-component>
