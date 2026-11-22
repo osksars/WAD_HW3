@@ -1,16 +1,12 @@
 <template>
   <!-- the header and footer are visible at all times -->
-  
-  <main class="page-main">
-    <router-view />
-  </main>
-  
+    <router-view />  
 </template>
 
 <script>
 
 export default {
-  name: "HomeView",
+  name: "App",
   components: {
   },
   data: function () {

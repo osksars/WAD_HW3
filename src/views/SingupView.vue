@@ -2,7 +2,7 @@
 
   <HeaderComponent></HeaderComponent>
 
-  <div class="signup">
+  <div class="signup page-main">
     <form @submit.prevent="handleSignup" class="form">
       <div class="form-group">
         <label for="email">Email</label>
